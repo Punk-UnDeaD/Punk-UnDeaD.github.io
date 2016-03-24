@@ -6,8 +6,19 @@ tags: [phpbrew]
 ---
 
 ```
-phpbrew install 7.0 +apxs2+json+mysql+pgsql+pdo+ctype+hash+mbstring+filter+gd+openssl
+phpbrew install 7.0 +apxs2+json+mysql+pgsql+pdo+ctype+hash+mbstring+filter+openssl
+phpbrew ext install gd -- --with-jpeg-dir --with-freetype-dir
 phpbrew ext install https://github.com/php-memcached-dev/php-memcached php7 -- --disable-memcached-sasl
 phpbrew extension install xdebug
 
+```
+
+Код проверки gd 
+
+```php?
+<?php
+    echo 'jpeg support - ' . (function_exists("imagecreatefromjpeg") ? 'ok' : 'error') . "\n";
+    echo 'png support - ' . (function_exists("imagecreatefrompng") ? 'ok' : 'error') . "\n";
+    echo 'gif support - ' . (function_exists("imagecreatefromgif") ? 'ok' : 'error') . "\n";
+    echo 'ftt support - ' . (function_exists("imagefttext") ? 'ok' : 'error') . "\n";
 ```
