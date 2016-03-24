@@ -6,7 +6,7 @@ tags: [phpbrew]
 ---
 
 ```
-phpbrew install 7.0 +apxs2+json+mysql+pgsql+pdo+ctype+hash+mbstring+filter+openssl
+phpbrew install 7.0 +apxs2+json+mysql+pgsql+pdo+ctype+hash+mbstring+filter+openssl+opcache
 phpbrew ext install gd -- --with-jpeg-dir --with-freetype-dir
 phpbrew ext install https://github.com/php-memcached-dev/php-memcached php7 -- --disable-memcached-sasl
 phpbrew extension install xdebug
