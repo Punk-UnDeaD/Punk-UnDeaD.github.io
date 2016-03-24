@@ -1,0 +1,13 @@
+---
+layout: post
+title:  "Установка php 7.0 с помощью phpbrew"
+date:   2016-03-25 00:55:00 +0300
+tags: [phpbrew]
+---
+
+```
+phpbrew install 7.0 +apxs2+json+mysql+pgsql+pdo+ctype+hash+mbstring+filter+gd+openssl
+phpbrew ext install https://github.com/php-memcached-dev/php-memcached php7 -- --disable-memcached-sasl
+phpbrew extension install xdebug
+
+```
