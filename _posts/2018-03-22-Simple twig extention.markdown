@@ -70,4 +70,14 @@ services:
   }
 ```
 
+Теперь вы везде сможете написать
+```twig
+{% raw %}
+{% for i in 1..100 %}
+  {{ i }} - {{ fizzbuzz(i) }} - {{ i|fizzbuzz }}
+  <hr>
+{% endfor %}
+{% endraw %}
+```
+
 [Файлы](https://github.com/Punk-UnDeaD/Punk-UnDeaD.github.io/tree/master/_files/2018-03-22-Simple%20twig%20extention.files)
