@@ -1,0 +1,6 @@
+name: FooBar
+description: FooBar functionality
+package: FooBar
+type: module
+core: 8.x
+version: 8.x-1.0
