@@ -1,0 +1,5 @@
+services:
+  foobar.twig.fizzbuzz_extension:
+    class: Drupal\foobar\Twig\Extension\FizzBuzz
+    tags:
+      - { name: twig.extension }
