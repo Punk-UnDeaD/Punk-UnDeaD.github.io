@@ -1,14 +1,13 @@
 ---
 layout: post
-title:  "Creating a simple extension Twig"
-date:   2018-03-23 12:58:00 +0300
+title:  "Создание простого расширения Twig"
+date:   2018-03-22 18:58:00 +0300
 tags: [twig, drupal8]
 ---
-It often happens that Twig does not have enough logic, and you need to quickly and easily extend the available output with new functions and filters.
-It's very simple.
+Очень часто случается, что наличной в Twig логики не хватает и есть необходимость быстро и просто расширить имеющийся вывод новыми функциями и фильтрами.
+Сделать это не просто, а очень просто.
 
-
-Create a module and a description of the service to it.
+Создадим модуль и описание сервиса к нему.
 
 #### foobar.info.yml
 ```yaml
@@ -28,18 +27,17 @@ services:
     tags:
       - { name: twig.extension }
 ```
+Последние две строки как раз и гарантируют нам, что FizzBuzz будет поключен к Twig в качестве расширения автоматически.
 
-The last two lines just guarantee that FizzBuzz will be connected to Twig as an extension automatically.
+#### Код FizzBuzz.php
 
-#### FizzBuzz.php
-
-getName method of FizzBuzz class must return unique value.
+Метод getName класса FizzBuzz должен возвращать уникальное имя. 
 ```php
   public function getName() {
     return 'foobar_fizzbuzz';
   }
 ```
-getFunctions and getFilters methods respectively define a new function and filter.
+Методы getFunctions и getFilters соответственно определяют новую функцию и фильтр.
 ```php
   public function getFunctions() {
     return [
@@ -53,9 +51,9 @@ getFunctions and getFilters methods respectively define a new function and filte
     ];
   }
 ```
-with name fizzbuzz and callable \[$this, 'fizzBuzz'].
+С именем fizzbuzz и исполняемым кодом в \[$this, 'fizzBuzz'].
 
-fizzBuzz method look like next code
+Сам метод fizzBuzz мог бы выглядеть вот так.
 ```php
   public function fizzBuzz($i) {
     $s = '';
@@ -72,7 +70,7 @@ fizzBuzz method look like next code
   }
 ```
 
-####Now you can write
+####Теперь вы везде сможете написать
 ```twig
 {% raw %}{% for i in 1..100 %}
   {{ i }} - {{ fizzbuzz(i) }} - {{ i|fizzbuzz }}
