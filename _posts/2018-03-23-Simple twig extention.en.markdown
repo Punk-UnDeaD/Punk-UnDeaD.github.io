@@ -72,7 +72,7 @@ fizzBuzz method look like next code
   }
 ```
 
-####Now you can write
+#### Now you can write
 ```twig
 {% raw %}{% for i in 1..100 %}
   {{ i }} - {{ fizzbuzz(i) }} - {{ i|fizzbuzz }}
@@ -80,4 +80,4 @@ fizzBuzz method look like next code
 {% endfor %}{% endraw %}
 ```
 
-[Файлы](https://github.com/Punk-UnDeaD/Punk-UnDeaD.github.io/tree/master/_files/2018-03-22-Simple%20twig%20extention.files)
+[files](https://github.com/Punk-UnDeaD/Punk-UnDeaD.github.io/tree/master/_files/2018-03-22-Simple%20twig%20extention.files)
