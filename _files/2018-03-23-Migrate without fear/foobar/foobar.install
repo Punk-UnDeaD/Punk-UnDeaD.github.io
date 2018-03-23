@@ -1,0 +1,18 @@
+<?php
+
+
+/**
+ * @file
+ * Contains foobar.install.
+ */
+
+/**
+ * Implements hook_uninstall().
+ *
+ * Removes stale migration configs during uninstall.
+ */
+function foobar_uninstall() {
+  \Drupal::configFactory()
+    ->getEditable('migrate_plus.migration.foobar_user')
+    ->delete();
+}

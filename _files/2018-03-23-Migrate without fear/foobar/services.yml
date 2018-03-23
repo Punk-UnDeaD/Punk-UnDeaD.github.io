@@ -1,0 +1,4 @@
+services:
+  password:
+    class: Drupal\foobar\Password\FoobarHashedPassword
+    arguments: [16]
