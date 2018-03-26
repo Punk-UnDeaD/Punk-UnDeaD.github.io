@@ -1,0 +1,18 @@
+id: foobar_user
+label: Migrate user
+source:
+  plugin: foobar_user
+  target: migrate
+process:
+  name: name
+  mail: mail
+  pass:
+    plugin: foobar_prefix
+    source: pass
+    prefix: 'F$'
+  status:
+    plugin: default_value
+    default_value: 1
+destination:
+  plugin: entity:user
+migration_dependencies: {}
